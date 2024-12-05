@@ -1,0 +1,16 @@
+services:
+  soccer_frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: soccer_frontend_app
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    environment:
+      - HOST_PORT=${HOST_PORT}
+    ports:
+      - '${HOST_PORT}:3000'
+    env_file:
+      - ./app/.env
+    command: npm run prod
