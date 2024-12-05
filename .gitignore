@@ -48,7 +48,7 @@ next-env.d.ts
 .vscode/
 .idea/
 .DS_Store
-*.soccer-frontend.code-workspace
+*.code-workspace
 
 # Sistema operativo
 Thumbs.db
