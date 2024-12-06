@@ -9,6 +9,10 @@ export interface League {
 export const apiFetchLeagues = async (): Promise<League[]> => {
     console.log(process.env.NEXT_PUBLIC_API_URL);
 
+    if (!process.env.NEXT_PUBLIC_API_URL) {
+        throw new Error("API URL is not defined");
+    }
+
     const apiUrl = new URL(process.env.NEXT_PUBLIC_API_URL);
     apiUrl.protocol = 'https:';
 
